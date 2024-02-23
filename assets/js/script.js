@@ -34,7 +34,7 @@ let list = {
         {
             nama: "Spaghetti",
             image: './assets/images/makanan/spaghetti.jpg',
-        }
+        },
         ),
     minuman: Array(
         {
@@ -66,35 +66,75 @@ let list = {
 
 for(let i = 0; i < list.makanan.length; i++){
     let slide = document.createElement('div');
-    let p = document.createElement('p');
-    p.innerHTML = list.makanan[i].nama;
-    p.style.color = 'var(--primary-color)';
-    p.style.display = 'flex';
-    p.
-    p.style.width = "100%";
-    p.style.height = "100%";
-    slide.append(p);
     slide.style.background = `url(${list.makanan[i].image})`;
     slide.style.backgroundSize = 'cover';
     slide.style.backgroundPosition = 'center';
     slide.style.backgroundSize = 'no-repeat';
+    if(i == 0){
+        slide.classList.add('active')
+    }
+    slide.setAttribute('data-type', 'makanan')
     slide.classList.add('slide');
     divmakanan.append(slide);
 }
+
 for(let i = 0; i < list.minuman.length; i++){
     let slide = document.createElement('div');
-    let p = document.createElement('p');
-    p.innerHTML = list.minuman[i].nama;
-    p.style.color = 'var(--primary-color)';
-    slide.append(p);
     slide.style.background = `url(${list.minuman[i].image})`;
     slide.style.backgroundSize = 'cover';
     slide.style.backgroundPosition = 'center';
     slide.style.backgroundSize = 'no-repeat';
+    if(i == 0){
+        slide.classList.add('active')
+    }
+    slide.setAttribute('data-type', 'minuman')
     slide.classList.add('slide');
     divminuman.append(slide);
 }
 
-function slideshow(n){
 
+let SlideIndexMakanan = 0
+function SlideshowMakanan(){
+    let i;
+    let slides = document.querySelectorAll('[data-type="makanan"]')
+    //menghapus seluruh class yang memiliki class active
+    for (i = 0; i < slides.length; i++){
+        slides[i].classList.remove('active');
+    }
+    SlideIndexMakanan++;
+    // Mengembalikan ke slide yang pertama
+    if(SlideIndexMakanan > slides.length) {
+        SlideIndexMakanan = 1;
+    }
+    //Menambahkan Class active ketika pada slide index yang aktif
+    slides[SlideIndexMakanan - 1].classList.add('active');
 }
+setInterval(SlideshowMakanan, 2000)
+
+let SlideIndexMinuman = 0
+function SlideshowMinuman(){
+    let i;
+    let slides = document.querySelectorAll('[data-type="minuman"]')
+    //menghapus seluruh class yang memiliki class active
+    for (i = 0; i < slides.length; i++){
+        slides[i].classList.remove('active');
+    }
+    SlideIndexMinuman++;
+    // Mengembalikan ke slide yang pertama
+    if(SlideIndexMinuman > slides.length) {
+        SlideIndexMinuman = 1;
+    }
+    //Menambahkan Class active ketika pada slide index yang aktif
+    slides[SlideIndexMinuman - 1].classList.add('active');
+}
+setInterval(SlideshowMinuman, 2000)
+
+const header = document.querySelector('header')
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY >= 100){
+        header.classList.add('below')
+    } else {
+        header.classList.remove('below')
+    }
+})
