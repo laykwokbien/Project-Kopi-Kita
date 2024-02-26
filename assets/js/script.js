@@ -1,5 +1,7 @@
 const divmakanan = document.getElementById('makanan'),
-divminuman = document.getElementById('minuman'); 
+header = document.querySelector('header'),
+testimoni = document.getElementById('testimoni'),
+divminuman = document.getElementById('minuman');
 
 let list = {
     makanan: Array(
@@ -63,7 +65,43 @@ let list = {
         },
         )
 }
+let review = [
+    {
+        nama: "Johnson",
+        desc: "It's not too bad, it taste rather unique",
+        star: 3
+    },
+    {
+        nama: "Ricky",
+        desc: "It's taste so amazing, I like it alot it's is a masterpeice",
+        star: 5
+    },
+    {
+        nama: "Anonim",
+        desc: "Interesting Taste, I kinda like it",
+        star: 4
+    },
+    {
+        nama: "Galang",
+        desc: "Rasanya kayak hacker enaknya minta ampun",
+        star: 6
+    }
+]
+let SlideIndexMinuman = 0
+let SlideIndexMakanan = 0
 
+// Start Navbar
+window.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+    if(window.scrollY >= 100){
+        header.classList.add('below')
+    } else {
+        header.classList.remove('below')
+    }
+})
+// End Navbar
+
+// Menu
 for(let i = 0; i < list.makanan.length; i++){
     let slide = document.createElement('div');
     slide.style.background = `url(${list.makanan[i].image})`;
@@ -91,9 +129,9 @@ for(let i = 0; i < list.minuman.length; i++){
     slide.classList.add('slide');
     divminuman.append(slide);
 }
+// Menu End
 
-
-let SlideIndexMakanan = 0
+// Slideshow Start
 function SlideshowMakanan(){
     let i;
     let slides = document.querySelectorAll('[data-type="makanan"]')
@@ -111,7 +149,6 @@ function SlideshowMakanan(){
 }
 setInterval(SlideshowMakanan, 2000)
 
-let SlideIndexMinuman = 0
 function SlideshowMinuman(){
     let i;
     let slides = document.querySelectorAll('[data-type="minuman"]')
@@ -128,13 +165,28 @@ function SlideshowMinuman(){
     slides[SlideIndexMinuman - 1].classList.add('active');
 }
 setInterval(SlideshowMinuman, 2000)
+// Slideshow End
 
-const header = document.querySelector('header')
-
-window.addEventListener('scroll', () => {
-    if(window.scrollY >= 100){
-        header.classList.add('below')
-    } else {
-        header.classList.remove('below')
+// Testimoni Start
+for(let indexReview = 0; indexReview < review.length; indexReview++){
+    let div = document.createElement('div');
+    div.classList.add('review');
+    let point = document.createElement('div');
+    point.classList.add('point');
+    for(let i = 1; i < review[indexReview].star; i++){
+        if(i > 5){
+            break;
+        }
+        point.innerHTML += "&#9733;";
     }
-})
+    div.append(point);
+    let name = document.createElement('p');
+    name.innerHTML = review[indexReview].nama;
+    div.append(name);
+    let descText = `"${review[indexReview].desc}"`
+    let desc = document.createElement('p');
+    desc.innerHTML = descText;
+    div.append(desc);
+    testimoni.append(div)
+}
+// Testimoni End

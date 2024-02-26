@@ -48,34 +48,39 @@
                 </a>
             </div>
         </section>
-        <section id="menu">
-            <h2 class="section-head">Menu</h2>
-            <div class="menu">
-                <div id="makanan">
-                    <h3>Makanan</h3>
-                </div>
-                <div id="minuman">
-                    <h3>Minuman</h3>
-                </div>
+        <div class="container">
+            <div class="content-about">
+                <section id="menu">
+                    <h2 class="section-head">Menu</h2>
+                    <div class="menu">
+                        <div id="makanan">
+                            <h3>Makanan</h3>
+                        </div>
+                        <div id="minuman">
+                            <h3>Minuman</h3>
+                        </div>
+                    </div>
+                </section>
+                <section id="tentang">
+                    <h2 class="section-head">Tentang</h2>
+                    <h3>Profil</h3>
+                    <p>
+                        Kopi Kita merupakan coffee shop yang didirikan
+                        untuk menjawab kebutuhan akan tempat bertemu, berdiskusi
+                        dan bercerita sambil menyeruput kopi dan aneka minuman
+                        lain juga untuk menikmati aneka hidangan yang lezat dengan harga terjangkau
+                    </p>
+                    <p>
+                        Berada di lokasi yang mudah dijangkau dan representatif,
+                        Kopi Kita selalu siap menunggumu datang.
+                    </p>
+                    <video autoplay muted>
+                        <source src="./assets/coffee_vid.mp4" type="video/mp4">
+                    </video>
+                </section>
             </div>
-        </section>
-        <section id="tentang">
-            <h2 class="section-head">Tentang</h2>
-            <h3>Profil</h3>
-            <p>
-                Kopi Kita merupakan coffee shop yang didirikan
-                untuk menjawab kebutuhan akan tempat bertemu, berdiskusi
-                dan bercerita sambil menyeruput kopi dan aneka minuman
-                lain juga untuk menikmati aneka hidangan yang lezat dengan harga terjangkau
-            </p>
-            <p>
-                Berada di lokasi yang mudah dijangkau dan representatif,
-                Kopi Kita selalu siap menunggumu datang.
-            </p>
-            <video autoplay muted>
-                <source src="./assets/coffee_vid.mp4" type="video/mp4">
-            </video>
-        </section>
+            <div class="testimonial" id="testimoni"></div>
+        </div>
         <section id="kontak">
             <h2 class="section-head">Kontak</h2>
             <div class="content">
@@ -87,13 +92,16 @@
                     </p>
                     <p>Telepon Kopi Kita Aja : 089601450969</p>
                     <div>
-                        <input type="checkbox" name="facebook" id="facebook"><label for="facebook">KopiKitaAja</label>
+                        <input type="checkbox" name="facebook" id="facebook"><label for="facebook"><box-icon
+                                name='facebook' type='logo' size="sm"></box-icon>KopiKitaAja</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="instagram" id="instagram"><label for="instagram">@KopiKitaAja</label>
+                        <input type="checkbox" name="instagram" id="instagram"><label for="instagram"> <box-icon
+                                type='logo' size="sm" name='instagram'></box-icon>@KopiKitaAja</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="tiktok" id="tiktok"><label for="tiktok">KopiKitaAja</label>
+                        <input type="checkbox" name="youtube" id="youtube"><label for="youtube"> <box-icon
+                                name='youtube' type='logo' size="sm"></box-icon>KopiKitaAja</label>
                     </div>
                     <label for="email">Subscribe newsletter kami untuk tetap terupdate</label>
                     <input type="email" name="email" id="email">
@@ -113,6 +121,7 @@
         @RPL 2024
     </footer>
     <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 
 </html>
