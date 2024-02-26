@@ -155,7 +155,7 @@ body {
   background-position-x: 50%;
 }
 
-.resume a h1 {
+.resume a h2 {
   text-shadow: 4px 4px 5px black;
   transition: 0.3s ease-out;
   width: 100%;
@@ -165,7 +165,7 @@ body {
   justify-content: center;
 }
 
-.resume a h1:hover {
+.resume a h2:hover {
   transition: 0.3s ease-out;
   backdrop-filter: blur(3px);
 }
@@ -218,8 +218,8 @@ body {
   border: groove 5px black;
 }
 
-#makanan h1,
-#minuman h1 {
+#makanan h2,
+#minuman h2 {
   border-bottom: solid black 2px;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -309,7 +309,7 @@ body {
 .lokasi {
   width: 50%;
 }
-.kontak h1 {
+.kontak h2 {
   text-align: start;
   font-weight: 600;
 }
