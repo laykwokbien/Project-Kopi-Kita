@@ -179,7 +179,6 @@ for(let indexReview = 0; indexReview < review.length; indexReview++){
     let point = document.createElement('div');
     point.classList.add('point');
     for(let StarIndex = 1; StarIndex <= review[indexReview].star; StarIndex++){
-        console.log(StarIndex)
         point.innerHTML += "&#9733;";
         if(StarIndex > 4){
             break;
