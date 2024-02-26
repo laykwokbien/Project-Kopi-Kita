@@ -83,8 +83,13 @@ let review = [
     },
     {
         nama: "Galang",
-        desc: "Rasanya kayak hacker enaknya minta ampun",
+        desc: "Rasanya seperti membuat hacker ini kenyang, minta ampun dompetku menipis.",
         star: 6
+    }, 
+    {
+        nama: "Jaya",
+        desc: "Servisnya lambat, pelayannya toxic.",
+        star: 5
     }
 ]
 let SlideIndexMinuman = 0
@@ -92,7 +97,7 @@ let SlideIndexMakanan = 0
 
 // Start Navbar
 window.addEventListener('scroll', () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if(window.scrollY >= 100){
         header.classList.add('below')
     } else {
@@ -173,11 +178,12 @@ for(let indexReview = 0; indexReview < review.length; indexReview++){
     div.classList.add('review');
     let point = document.createElement('div');
     point.classList.add('point');
-    for(let i = 1; i < review[indexReview].star; i++){
-        if(i > 5){
+    for(let StarIndex = 1; StarIndex <= review[indexReview].star; StarIndex++){
+        console.log(StarIndex)
+        point.innerHTML += "&#9733;";
+        if(StarIndex > 4){
             break;
         }
-        point.innerHTML += "&#9733;";
     }
     div.append(point);
     let name = document.createElement('p');
